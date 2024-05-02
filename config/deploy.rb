@@ -11,6 +11,8 @@ set :ssh_options, {
   keys: %w[/home/blubirch/Downloads/pavanpractice.pem]
 }
 
+set :stages, %w(production)
+
 # Application name
 set :application, "helloworld"
 
