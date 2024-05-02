@@ -1,5 +1,6 @@
 # Load DSL and set up stages
 require "capistrano/setup"
+set :stage, :production
 
 # Include default deployment tasks
 require "capistrano/deploy"
@@ -19,7 +20,7 @@ require "capistrano/puma"
 # Instead, use require to include the plugin
 require "capistrano/puma"
 
-set :stages, %w(production)
+
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
