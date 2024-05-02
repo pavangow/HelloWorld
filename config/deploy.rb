@@ -1,6 +1,13 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.18.1"
 
+server '13.60.64.135', user: 'ubuntu', roles: %w{web app db}
+set :ssh_options, {
+forward_agent: true,
+auth_methods: %w[publickey],
+keys: %w[/home/blubirch/Downloads/pavanpractice.pem]
+}
+
 set :application, "helloworld"
 set :repo_url, 'https://github.com/pavangow/HelloWorld.git'
 set :deploy_to, '/home/ubuntu/helloworld'
